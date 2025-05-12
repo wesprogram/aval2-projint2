@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
@@ -25,7 +27,7 @@ export default function Home() {
         </div>
     </header>
       <div className="bg-black-900 dark:text-white">
-        <div className="flex flex-col items-center justify-center min-h-48">  
+        <div className="flex flex-col items-left justify-left min-h-48">  
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-6xl font-[family-name:var(--font-geist-mono)] font-semibold text-black">STL</h1>
             <p className="text-lg font-[family-name:var(--font-geist-mono)] font-semibold text-white-900 dark:invert">Savings Thinking the Earth</p>
@@ -37,86 +39,66 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
-          src="/stl.svg"
+          src="/stllogol.svg"
           alt="STL logo"
           width={180}
           height={38}
           priority
         />
-        <ol className="list-inside list-none text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            {"PTR4"}{" - "}{" Petrobras  "}{"  "}
-            <code className="bg-red-700 dark:bg-red-700 px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              35.5
-            </code>
-          </li>
-          <li className="mb-2 tracking-[-.01em]">
-            {"Val3"}{" - "}{" Vale  "}{"  "}
-            <code className="bg-yellow-600 dark:bg-yellow-600 px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              56.8
-            </code>
-          </li>
-          <li className="mb-2 tracking-[-.01em]">
-            {"OIBR3"}{" - "}{" Oi  "}{"  "}
-            <code className="bg-green-600 dark:bg-green-600 px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              78.9
-            </code>
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Filtros
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Entenda nosso ranking
-          </a>
-        </div>
-      </main>
+        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center font-[family-name:var(--font-geist-sans)]"></div>
+          <table className="table-auto justify-center border-transparent">
+            <thead>
+              <tr className="text-center font-[family-name:var(--font-geist-mono)] font-bold">
+                <th className="px-4 py-2">Tipo de investimento</th>
+                <th className="px-4 py-2">Nome</th>
+                <th className="px-4 py-2">Código</th>
+                <th className="px-4 py-2">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="hover:bg-gray-100 dark:hover:bg-gray-200 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
+                <td className="border px-4 py-2">Ação</td>
+                <td className="border px-4 py-2">Petrobras</td>
+                <td className="border px-4 py-2">PTR4</td>
+                <td className="bg-red-600 dark:bg-red-600 px-1 py-0.5">35.5</td>
+              </tr>
+              <tr className="hover:bg-gray-100 dark:hover:bg-gray-700 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
+                <td className="border px-4 py-2">Ação</td>
+                <td className="border px-4 py-2">Vale</td>
+                <td className="border px-4 py-2">VAL3</td>
+                <td className="bg-yellow-600 dark:bg-yellow-600 px-1 py-0.5">56.8</td>
+              </tr>
+              <tr className="hover:bg-gray-100 dark:hover:bg-gray-700">
+                <td className="border px-4 py-2 rounded font-[family-name:var(--font-geist-mono)] font-semibold">Ação</td>
+                <td className="border px-4 py-2 rounded font-[family-name:var(--font-geist-mono)] font-semibold">Oi</td>
+                <td className="border px-4 py-2 rounded font-[family-name:var(--font-geist-mono)] font-semibold">OIBR3</td>
+                <td className="bg-green-600 dark:bg-green-600 px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">78.9</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center font-[family-name:var(--font-geist-sans)]"></div>
+          <div className="flex gap-4 items-center flex-col sm:flex-row">
+            <a
+              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Filtros
+            </a>
+            <Link
+              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+              href="/ranking"
+              
+            >
+              Entenda nosso ranking
+            </Link>
+          </div>
+        </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -130,7 +112,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-      </div>
     </div>
+  </div>
   );
 }
